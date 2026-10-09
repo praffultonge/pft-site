@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Provided Further That…</title>
+  <meta name="description" content="Law, capital, and the questions in between. Analysis of regulatory frameworks, capital structures, and the second and third-order effects of legal design — from GIFT City IFSC.">
+  <link rel="canonical" href="https://providedfurtherthat.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://providedfurtherthat.in/">
+  <meta property="og:title" content="Provided Further That…">
+  <meta property="og:description" content="Law, capital, and the questions in between.">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Spectral:ital,wght@0,400;0,600;1,400&family=Spectral+SC:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ------------------------------------------------------------------
+       Built on the Typography for Lawyers method (Matthew Butterick):
+       one fluid root size, everything else in rem; one spacing unit;
+       a left margin column for labels; one accent colour; true small
+       caps for navigation; links marked by a raised symbol, not an
+       underline. Fonts are free (OFL) substitutes, retuned by eye.
+       ------------------------------------------------------------------ */
+
+    :root {
+      --ink:   #1c1a19;
+      --soft:  #5f5850;   /* secondary text */
+      --rule:  #cfc6ba;
+      --paper: #fbf9f6;
+      --red:   #b3191b;   /* the only accent */
+      --wash:  #f6e9e6;   /* link hover */
+      --unit:  2.5rem;    /* the grid module */
+
+      --text:  'Spectral', Georgia, serif;
+      --caps:  'Spectral SC', 'Spectral', Georgia, serif;
+      --title: 'Libre Baskerville', Georgia, serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --ink:   #e9e4dd;
+        --soft:  #a59c91;
+        --rule:  #4a443e;
+        --paper: #171514;
+        --red:   #e0605a;
+        --wash:  #3a2422;
+      }
+    }
+
+    /* 1. One fluid root size. The page zooms as a unit, so the
+          characters-per-line of the text column stays constant. */
+    html { font-size: 2.3vw; }
+    @media (min-width: 1000px) { html { font-size: 23px; } }
+    @media (max-width: 560px)  { html { font-size: 18px; } }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      /* 2. Size and leading tuned to Spectral, whose large x-height
+            reads big: set it smaller and looser than a Garamond. */
+      font-family: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.52;
+      font-variant-numeric: oldstyle-nums proportional-nums;
+      font-kerning: normal;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphenate-limit-chars: 7 3 3;
+    }
+
+    .page {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      /* 3. Left margin of 12rem holds the label column. */
+      padding: 4rem var(--unit) 6rem 12rem;
+    }
+
+    p { margin-bottom: 1em; text-wrap: pretty; }
+
+    /* ---------- Margin column (TFL title-block / aside) ---------- */
+    section { position: relative; margin-bottom: 2.8rem; }
+
+    .label {
+      position: absolute;
+      left: calc(-12rem + var(--unit));
+      width: calc(var(--unit) * 3);
+      text-align: right;
+      border-top: 3px solid var(--ink);
+      padding-top: 0.3rem;
+      font-family: var(--caps);
+      font-weight: 600;
+      font-size: 0.82rem;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      hyphens: none;
+    }
+
+    .label .note {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: var(--text);
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.74rem;
+      letter-spacing: 0;
+      line-height: 1.4;
+      color: var(--soft);
+    }
+
+    /* ---------- Masthead ---------- */
+    .masthead { margin-bottom: 3.2rem; }
+
+    .masthead .label {
+      font-family: var(--title);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0;
+      color: var(--red);
+      border-top-color: var(--red);
+    }
+
+    h1 {
+      font-family: var(--title);
+      font-style: italic;          /* true italic: Libre Baskerville has no bold italic */
+      font-weight: 400;
+      font-size: 2.55rem;
+      line-height: 1.08;
+      letter-spacing: -0.012em;
+      color: var(--red);
+      margin-bottom: 0.9rem;
+      hyphens: none;
+      text-wrap: balance;
+    }
+
+    .short-rule {
+      font-style: italic;
+      font-size: 1.12rem;
+      line-height: 1.3;
+      color: var(--ink);
+      hyphens: none;
+    }
+
+    /* First paragraph after a heading steps up, as in TFL */
+    .lede { font-size: 1.07em; line-height: 1.45; }
+
+    .coda {
+      font-style: italic;
+      color: var(--soft);
+      hyphens: none;
+    }
+
+    /* ---------- Subjects: two-column list, TFL ul.children ---------- */
+    ul.subjects {
+      list-style: none;
+      column-count: 2;
+      column-gap: var(--unit);
+      margin-bottom: 0.4rem;
+    }
+    ul.subjects li {
+      break-inside: avoid;
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+      margin-bottom: 0.55em;
+      hyphens: none;
+    }
+    ul.subjects li::before {
+      content: "§";
+      display: inline-block;
+      width: 1.2em;
+      text-indent: 0;
+      color: var(--red);
+    }
+    .num {
+      font-family: var(--caps);
+      font-weight: 500;
+      font-size: 0.85em;
+      color: var(--soft);
+      white-space: nowrap;
+    }
+
+    /* ---------- Links ---------- */
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    a:hover { background: var(--wash); }
+    a:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+
+    /* External links carry a raised red degree mark (TFL a:after) */
+    a.ext::after {
+      content: "\FEFF°";
+      position: relative;
+      top: -0.1em;
+      margin-left: 0.08em;
+      font-size: 90%;
+      color: var(--red);
+      font-variant-numeric: normal;
+    }
+
+    /* ---------- Call to action ---------- */
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.6rem 1.6rem;
+    }
+    a.button {
+      display: inline-block;
+      background: var(--red);
+      color: var(--paper);
+      font-family: var(--caps);
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      padding: 0.32em 0.95em 0.42em;
+      border-radius: 1em;
+    }
+    a.button:hover { background: #8f1214; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) a.button { color: #171514; }
+      :root:not([data-theme="light"]) a.button:hover { background: #f07a74; }
+    }
+    a.plain {
+      font-style: italic;
+      padding: 0.1em 0.2em;
+    }
+
+    /* ---------- Footer: TFL navtable ---------- */
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--unit) 0 12rem;
+    }
+    .navtable {
+      display: flex;
+      border-top: 1px solid var(--soft);
+      font-family: var(--caps);
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      color: var(--soft);
+    }
+    .navtable > * {
+      flex: 1 1 auto;
+      white-space: nowrap;
+      padding: 0.7rem 0.8rem 1.6rem;
+    }
+    .navtable > * + * { border-left: 1px solid var(--rule); }
+    .navtable > :first-child { padding-left: 0; }
+    .navtable > :last-child  { text-align: right; padding-right: 0; }
+    .navtable .center { text-align: center; }
+    .navtable a { border-radius: 0; }
+    .navtable a:hover { color: var(--ink); background: none; }
+
+    /* ---------- Narrow screens: margin column folds into the flow ---------- */
+    @media (max-width: 560px) {
+      .page { padding: 2.2rem 1.1rem 3rem; }
+      footer { padding: 0 1.1rem; }
+      .label {
+        position: static;
+        width: auto;
+        text-align: left;
+        margin-bottom: 0.9rem;
+      }
+      .label .note { display: inline; margin: 0 0 0 0.4rem; }
+      .masthead .label { display: inline-block; padding-right: 1rem; margin-bottom: 1.6rem; }
+      h1 { font-size: 2.1rem; }
+      ul.subjects { column-count: 1; }
+      .navtable .center { display: none; }
+      .navtable > * { white-space: normal; }
+    }
+
+    @media print {
+      :root { --paper: #fff; --ink: #000; }
+      .actions, footer { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="page">
+
+  <header class="masthead" role="banner">
+    <section>
+      <div class="label" aria-hidden="true">Pft…</div>
+      <h1>Provided further&nbsp;that…</h1>
+      <p class="short-rule">Law, capital, and the questions in&nbsp;between</p>
+    </section>
+  </header>
+
+  <section>
+    <h2 class="label">The brief</h2>
+    <p class="lede">Law tells you the rule. This is about what the rule does — to capital, to structure, and to the people who have to live with&nbsp;both.</p>
+    <p>Analysis of regulatory frameworks, capital structures, and the second and third-order effects of legal design. Written for practitioners, investors, and anyone who reads the footnotes. The focus is GIFT City IFSC, Indian capital markets, and the cross-border structures that connect them to the world. Occasionally, something further&nbsp;afield.</p>
+    <p class="coda">No summaries. No checklists. No congratulations to the law for&nbsp;existing.</p>
+  </section>
+
+  <section>
+    <h2 class="label">The name<span class="note">from the proviso clause</span></h2>
+    <p><em>Provided further that</em> is the clause lawyers use when the paragraph before it almost got it right. It qualifies, it carves out, it complicates. It seemed like the right name for a publication that treats every answer as the beginning of a better&nbsp;question.</p>
+    <p>Written from GIFT City IFSC, where the regulations are new enough that the exceptions are still being&nbsp;written.</p>
+  </section>
+
+  <section>
+    <h2 class="label">So far<span class="note">fifty-odd issues</span></h2>
+    <ul class="subjects">
+      <li>The regulatory architecture of GIFT IFSC <span class="num">№&nbsp;009</span></li>
+      <li>FATCA and the reach of US tax law</li>
+      <li>The Bank for International Settlements</li>
+      <li>Carbon trading</li>
+      <li>The yen carry trade</li>
+      <li>Tokenised JGBs on the Canton Network</li>
+      <li>The architecture of SWIFT</li>
+      <li>CBDCs and the e₹</li>
+      <li>On the proviso itself <span class="num">№&nbsp;051</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="label">Read</h2>
+    <div class="actions">
+      <a class="button" href="https://providedfurtherthat.substack.com" rel="noopener">Read on Substack</a>
+      <a class="plain" href="mailto:hello@providedfurtherthat.in">hello@providedfurtherthat.in</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <nav class="navtable" aria-label="Site">
+    <span>© 2025–26 Provided Further That</span>
+    <span class="center">GIFT City IFSC</span>
+    <a class="ext" href="https://providedfurtherthat.substack.com" rel="noopener">Substack</a>
+  </nav>
+</footer>
+
+</body>
+</html>
