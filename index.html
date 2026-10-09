@@ -190,6 +190,36 @@
       white-space: nowrap;
     }
 
+    /* ---------- Open work ---------- */
+    ul.works { list-style: none; margin: 0.4rem 0 1rem; }
+    ul.works li {
+      border-top: 1px solid var(--rule);
+      padding: 0.7rem 0 0.8rem;
+    }
+    ul.works li:last-child { border-bottom: 1px solid var(--rule); }
+    .work-title {
+      display: block;
+      font-weight: 600;
+      line-height: 1.3;
+      hyphens: none;
+    }
+    .work-note {
+      display: block;
+      color: var(--soft);
+      font-size: 0.94em;
+      margin: 0.15rem 0 0.35rem;
+    }
+    .work-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 1.4rem;
+      font-family: var(--caps);
+      font-weight: 500;
+      font-size: 0.92em;
+      letter-spacing: 0.02em;
+    }
+    p.more { font-family: var(--caps); font-weight: 500; letter-spacing: 0.02em; }
+
     /* ---------- Links ---------- */
     a {
       color: inherit;
@@ -331,6 +361,30 @@
   </section>
 
   <section>
+    <h2 class="label">Open work<span class="note">maps and source, on GitHub</span></h2>
+    <p>The working files behind the analysis — interactive maps and annotated regulations — are published openly, with their&nbsp;source.</p>
+    <ul class="works">
+      <li>
+        <span class="work-title">IFSCA regulated entity types</span>
+        <span class="work-note">An interactive map of the entity classes IFSCA regulates. Companion to <span class="num">№&nbsp;009</span>.</span>
+        <span class="work-links">
+          <a class="ext" href="https://praffultonge.github.io/pft-maps/009/ifsca_mindmap_v3.html" rel="noopener">Open the map</a>
+          <a class="ext" href="https://github.com/praffultonge/pft-maps/tree/main/009" rel="noopener">Source</a>
+        </span>
+      </li>
+      <li>
+        <span class="work-title">IFSCA (Bullion Market) Regulations, 2025 — annotated</span>
+        <span class="work-note">The full regulations with structural commentary alongside the text. Companion to the bullion series.</span>
+        <span class="work-links">
+          <a class="ext" href="https://praffultonge.github.io/pft-maps/012/bmr2025_annotated_v1.html" rel="noopener">Read the annotation</a>
+          <a class="ext" href="https://github.com/praffultonge/pft-maps/tree/main/012" rel="noopener">Source</a>
+        </span>
+      </li>
+    </ul>
+    <p class="more"><a class="ext" href="https://github.com/praffultonge" rel="noopener">All repositories</a></p>
+  </section>
+
+  <section>
     <h2 class="label">Read</h2>
     <div class="actions">
       <a class="button" href="https://providedfurtherthat.substack.com" rel="noopener">Read on Substack</a>
@@ -343,7 +397,7 @@
 <footer>
   <nav class="navtable" aria-label="Site">
     <span>© 2025–26 Provided Further That</span>
-    <span class="center">GIFT City IFSC</span>
+    <a class="center ext" href="https://github.com/praffultonge" rel="noopener">GitHub</a>
     <a class="ext" href="https://providedfurtherthat.substack.com" rel="noopener">Substack</a>
   </nav>
 </footer>
